@@ -9,7 +9,6 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import java.io.IOException;
 
 @Component
 public class TelegramBot extends TelegramLongPollingBot {
@@ -37,7 +36,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                     e.printStackTrace();
                 }
             } else {
-                userRepo.save(new UserDB(update.getMessage().getChatId(),update.getMessage().getChat().getUserName(),update.getMessage().getChat().getId()));
+                userRepo.save(new UserDB(update.getMessage().getChatId(), update.getMessage().getChat().getUserName(), update.getMessage().getChat().getId()));
                 SendMessage message = new SendMessage() // Create a SendMessage object with mandatory fields
                         .setChatId(update.getMessage().getChatId())
                         .setText("Done :)" + "Now you can get push by timer in your chat!");
@@ -50,8 +49,6 @@ public class TelegramBot extends TelegramLongPollingBot {
                 }
             }
         }
-
-
 
 
         // sent user "help" message
@@ -68,15 +65,16 @@ public class TelegramBot extends TelegramLongPollingBot {
 
         }
 
-        }
+    }
 
 
     @Override
-    public String getBotUsername () {
+    public String getBotUsername() {
         return "First23_Bot";
     }
+
     @Override
-    public String getBotToken () {
+    public String getBotToken() {
         return "1187356229:AAEW5BtrdvO8IqtG0jY_oD5sq3KdjZQ4kqU";
-}
+    }
 }

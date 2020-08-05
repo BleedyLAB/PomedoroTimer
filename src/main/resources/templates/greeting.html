@@ -2,19 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
 <h1>Welcome to the Tomato timer</h1>
-<div>Hello user!</div>
-<form id="form2" method="post" >
+<div></div>
+<form method="GET" action="/timer">
     <div><label>You're nickname in Telegram: <input type="text" name="nickname"/></label></div>
-    <button formaction="start" type="submit">Start tomating</button>
-</form>
-
-<form id="form1" method="post" >
-    <div><label>You're nickname in Telegram: <input type="text" name="nicknameToStop"/></label></div>
-    <button formaction="finish" type="submit">Just stop it!</button>
+    <button  type="submit">Start tomating</button>
 </form>
 
 </body>

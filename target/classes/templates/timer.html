@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>Welcome to the Tomato timer</h1>
+<div> Hello! <span th:text="${#request.getParameter('nickname')}"></span></div>
+
+<form method="post" action="/start">
+    <input type="hidden" name="nickname" th:value="${#request.getParameter('nickname')}">
+    <button type="submit">Start tomating</button>
+</form>
+<form method="post" action="/finish">
+    <input type="hidden" name="nickname" th:value="${#request.getParameter('nickname')}">
+    <button type="submit">Just stop it!</button>
+</form>
+<form method="post" action="/customTimer">
+    <div>We can run some custom timer too! Just set your time here</div>
+    <div><label>You're time(min): <input type="text" name="timeForTimer"/></label></div>
+    <input type="hidden" name="nickname" th:value="${#request.getParameter('nickname')}">
+    <button type="submit">Start timer</button>
+</form>
+<h2>Твои челенджи </h2>
+<table>
+    <tr>
+        <th>Даты выполненых челенджей</th>
+    </tr>
+    <tr th:each="date: ${filter}">
+        <td th:text="${date.toString()}"></td>
+    </tr>
+</table>
+</body>
+</html>

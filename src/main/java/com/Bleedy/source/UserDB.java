@@ -1,13 +1,12 @@
 package com.Bleedy.source;
 
-import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="TomatoUser")
+@Table(name = "TomatoUser")
 public class UserDB {
 
 
@@ -19,8 +18,11 @@ public class UserDB {
     private Long userID;
     @ElementCollection
     private List<String> challengeDone = new ArrayList<String>();
-    public UserDB(){}
-    public UserDB(Long chatId,String userName,Long userID){
+
+    public UserDB() {
+    }
+
+    public UserDB(Long chatId, String userName, Long userID) {
         this.chatId = chatId;
         this.userName = userName;
         this.userID = userID;
@@ -49,7 +51,8 @@ public class UserDB {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    public void addInChallengeDone(String str){
+
+    public void addInChallengeDone(String str) {
         challengeDone.add(str);
     }
 
