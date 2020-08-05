@@ -22,7 +22,7 @@ public class Application {
 
         ConfigurableApplicationContext context = SpringApplication.run(Application.class);
 
-        TelegramBotsApi botsApi  = new TelegramBotsApi();
+        TelegramBotsApi botsApi = new TelegramBotsApi();
         TelegramBot myTelegramBot = (TelegramBot) context.getBean("telegramBot");
 
         try {
